@@ -1,0 +1,1622 @@
+[ERROR] [UID:1636][4521] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/utils/urls.py", line 103, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/views/dashboard.py", line 45, in get
+    if not setup_wizard_complete(request):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/utils/wizard.py", line 69, in setup_wizard_complete
+    return not setup_wizard_visible_panes(shop, request=request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/utils/wizard.py", line 80, in setup_wizard_visible_panes
+    return len(load_setup_wizard_panes(shop, request)) > 0
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/utils/wizard.py", line 29, in load_setup_wizard_panes
+    pane_class = load(pane_spec)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/utils/importing.py", line 21, in load
+    module_name, object_name = specification.rsplit(delimiter, 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/middleware.py", line 59, in __call__
+    response = self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/boavenda_app/passenger_wsgi.py", line 28, in __call__
+    return self.app(environ, start_response)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/wsgi.py", line 141, in __call__
+    response = self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+
+
+
+Traceback (most recent call last):
+  File "/home/boavenda/boavenda_app/passenger_wsgi.py", line 32, in <module>
+    application = WhiteNoise(application, root='''/home/boavenda/public_html/var/static''')
+NameError: name 'WhiteNoise' is not defined
+[UID:1636][21008] Child process with pid: 21124 was killed by signal: 15, core dump: 0
+Traceback (most recent call last):
+  File "/home/boavenda/boavenda_app/passenger_wsgi.py", line 32, in <module>
+    application = WhiteNoise(application, root='''/home/boavenda/public_html/var/static''')
+NameError: name 'WhiteNoise' is not defined
+Traceback (most recent call last):
+  File "/home/boavenda/boavenda_app/passenger_wsgi.py", line 32, in <module>
+    application = WhiteNoise(application, root='''/home/boavenda/public_html/var/static''')
+NameError: name 'WhiteNoise' is not defined
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+[ERROR] [UID:1636][24636] wsgiAppHandler pApp->start_response() return NULL.
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/utils/urls.py", line 103, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/views/dashboard.py", line 45, in get
+    if not setup_wizard_complete(request):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/utils/wizard.py", line 69, in setup_wizard_complete
+    return not setup_wizard_visible_panes(shop, request=request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/utils/wizard.py", line 80, in setup_wizard_visible_panes
+    return len(load_setup_wizard_panes(shop, request)) > 0
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/utils/wizard.py", line 29, in load_setup_wizard_panes
+    pane_class = load(pane_spec)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/utils/importing.py", line 21, in load
+    module_name, object_name = specification.rsplit(delimiter, 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/middleware.py", line 59, in __call__
+    response = self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/boavenda/boavenda_app/passenger_wsgi.py", line 29, in __call__
+    return self.app(environ, start_response)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py", line 85, in __call__
+    return self.application(environ, start_response)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/wsgi.py", line 141, in __call__
+    response = self.get_response(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 129, in handle_uncaught_exception
+    return callback(request, **param_dict)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/core/error_handling.py", line 64, in view
+    return handler.handle_error(request, error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/error_handlers.py", line 43, in handle_error
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+    return render(request, "shuup/admin/errors/{}.jinja".format(error_status), status=error_status)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 65, in render
+    return mark_safe(self._process_template(self.template.render, context, request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django_jinja/backend.py", line 111, in _process_template
+    return handler(context)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/xtheme/engine.py", line 45, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/errors/500.jinja", line 1, in top-level template code
+    {% extends "shuup/admin/base.jinja" %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/templates/shuup/admin/base.jinja", line 25, in top-level template code
+    {% set conf = shuup_admin.get_config() %}
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 137, in get_config
+    "settings": get_settings(request),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/template_helpers/shuup_admin.py", line 117, in get_settings
+    admin_settings.update(admin_browser_config_provider.get_gettings(request))
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/shuup/admin/browser_config.py", line 55, in get_gettings
+    "staticPrefix": static(""),
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 167, in static
+    return StaticNode.handle_simple(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/django/contrib/staticfiles/storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for ''
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
