@@ -1620,3 +1620,12 @@ ValueError: Missing staticfiles manifest entry for ''
 /home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
   warnings.warn(u"No directory at: {}".format(root))
 
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
+/home/boavenda/virtualenv/boavenda_app/3.7/lib/python3.7/site-packages/whitenoise/base.py:115: UserWarning: No directory at: /home/boavenda/static/
+  warnings.warn(u"No directory at: {}".format(root))
+
